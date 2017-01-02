@@ -1,3 +1,3 @@
 <?php
-//silence is golden
-echo 'glad you were here';
+get_header();
+get_footer();
