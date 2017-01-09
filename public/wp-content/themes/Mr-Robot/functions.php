@@ -21,7 +21,7 @@ if ( ! function_exists( 'mr_robot_styles' ) ) {
 }
 if(!function_exists('mr_robot_custom_excerpt_length')){
     function mr_robot_custom_excerpt_length(){
-        return 30;
+        return 50;
     }
 }
 if(!function_exists('mr_robot_excerpt_more')){
@@ -47,6 +47,8 @@ if(!function_exists('mr_robot_theme_setup')){
             'height'      => 250,
             'flex-width'  => true,
         ) );
+        add_theme_support('custom-background');
+        add_theme_support('title-tag' );
     // add_theme_support( 'customize-selective-refresh-widgets' );
 
     }
@@ -58,9 +60,31 @@ if(!function_exists('mr_robot_pingback_header')){
         }
     }
 }
+if(!function_exists('mr_robot_widget_init')){
+    function mr_robot_widget_init(){
+           /**
+            * Creates a sidebar
+            * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
+            */
+            $primary = array(
+                'name'          => __( 'Primary Sidebar', 'mr_robot' ),
+                'id'            => 'primary-sidebar',
+                'description'   => 'Primary sidebar to show notification and alert in the website',
+                'class'         => 'primary-sidebar',
+                'before_widget' => '<li id="%1" class="widget %2">',
+                'after_widget'  => '</li>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>'
+            );
+        
+            register_sidebar( $primary );
+        
+    }
+}
 add_filter('show_admin_bar','__return_false');
 add_filter('excerpt_more','mr_robot_excerpt_more');
 add_filter('excerpt_length','mr_robot_custom_excerpt_length');
 add_action( 'after_setup_theme', 'mr_robot_theme_setup' );
 add_action( 'wp_head', 'mr_robot_pingback_header' );
 add_filter( 'the_generator', '__return_null' );
+add_action('widgets_init','mr_robot_widget_init');

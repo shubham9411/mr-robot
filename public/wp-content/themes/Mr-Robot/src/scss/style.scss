@@ -4,6 +4,7 @@ Author: Shubham
 Author URI: http://shubhampandey.in
 Description: Theme developed by Shubham Pandey
 Version: 1.0.0
+Child Theme: Twenty Seventeen
 */
 
 @import 'variables';
@@ -13,6 +14,7 @@ body {
 	font-size: 16px;
 	font-family: 'open sans',sans-serif;
 	color: $black;
+	padding: 5em;
 }
 a{
 	color: inherit;
@@ -30,13 +32,16 @@ a{
 p{
 	font-family: 'open sans',sans-serif;
 }
-.wrap{
-	padding: 0 4em;
+li{
+	list-style: none;
 }
 .row{
 	width: 100%;
 }
-header{
-	
+.content{
+	padding-top: 2em;
+}
+.logo{
+	padding: 0;
 }
 @import 'media';

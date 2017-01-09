@@ -10,19 +10,13 @@ get_header();
 		get_template_part('templates/page','content' );
 	endif;
 	while(have_posts()): the_post();
-		if($count%3==0):
-			echo '<div class="row">';
-		endif;
-		$count++;
 		?>
-		<div class="col-xs-12 col-sm-6 col-md-4">
+		<div class="col-xs-offset-1 col-xs-10">
 			<h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
-			<p><?php the_excerpt(); ?>
+			<p><?php the_excerpt(); ?></p>
 		</div>
+		<div class="col-xs-offset-1 col-xs-10"><hr/></div>
 		<?php
-		if($count%3==0 || $count == $max_count):
-			echo '</div>';
-		endif;
 	endwhile;
 	?>
 	</div>
