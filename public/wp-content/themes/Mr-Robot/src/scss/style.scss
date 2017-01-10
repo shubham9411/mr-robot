@@ -14,7 +14,6 @@ body {
 	font-size: 16px;
 	font-family: 'open sans',sans-serif;
 	color: $black;
-	padding: 5em;
 }
 a{
 	color: inherit;
@@ -43,5 +42,19 @@ li{
 }
 .logo{
 	padding: 0;
+}
+.post-meta{
+	span:only-child:after{
+		content: '';
+		padding: 0px;
+	}
+	span:last-child:after{
+		content: '';
+		padding: 0px;
+	}
+	span:after{
+		content: '\00a0|\00a0';
+		padding: 5px;
+	}
 }
 @import 'media';

@@ -3,10 +3,10 @@
 if ( ! function_exists( 'mr_robot_scripts' ) ) {
     function mr_robot_scripts() {
         wp_enqueue_script('mr_robot-jquery', get_template_directory_uri().'/dist/lib/js/jquery-1.11.3.min.js');
+        wp_enqueue_script('mr_robot-nprogress', get_template_directory_uri().'/dist/lib/js/nprogress.js');
         wp_enqueue_script('mr_robot-bootstrap', get_template_directory_uri().'/dist/lib/js/bootstrap.min.js');
         wp_enqueue_script('main', get_template_directory_uri().'/main.js');
         wp_localize_script('main','ajaxurl',admin_url('admin-ajax.php') );
-
     }
     add_action('wp_enqueue_scripts','mr_robot_scripts');
 }
@@ -14,6 +14,7 @@ if ( ! function_exists( 'mr_robot_scripts' ) ) {
 if ( ! function_exists( 'mr_robot_styles' ) ) {
     function mr_robot_styles() {  
         wp_enqueue_style('mr_robot-bootstrap', get_template_directory_uri().'/dist/lib/css/bootstrap.min.css');
+        wp_enqueue_style('mr_robot-nprogress', get_template_directory_uri().'/dist/lib/css/nprogress.css');
         wp_enqueue_style('style', get_template_directory_uri().'/style.css');
 
     }
@@ -86,7 +87,7 @@ if(!function_exists('mr_robot_widget_init')){
                 'id'            => 'primary-sidebar',
                 'description'   => 'Primary sidebar to show notification and alert in the website',
                 'class'         => 'primary-sidebar',
-                'before_widget' => '<li id="%1" class="widget %2">',
+                'before_widget' => '<li id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</li>',
                 'before_title'  => '<h2 class="widget-title">',
                 'after_title'   => '</h2>'
