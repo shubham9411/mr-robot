@@ -9,8 +9,8 @@
 	</head>
 	<body>
 		<header class="row">
-			<div class="col-xs-11 col-xs-offset-1 logo">
-				<div class="heading">
+				<div class="col-xs-11 col-xs-offset-1 logo">
+						<div class="heading">
 					<h1><b><a href="<?php echo get_home_url(); ?>"><?php echo get_option('blogname' );?></a></b></h1>
 				</div>
 				<div class="sub-heading">
