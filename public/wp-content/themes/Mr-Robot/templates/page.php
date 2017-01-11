@@ -1,4 +1,7 @@
 <div class="col-xs-12">
-	<h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
+	<h1><?php the_title();?></h1>
 	<p><?php the_content(); ?>
+	<div class="col-xs-12 col-sm-11">
+	<?php comments_template();?>
+	</div>
 </div>

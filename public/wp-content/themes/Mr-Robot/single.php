@@ -15,16 +15,16 @@ get_header(); ?>
 	endif;
 	while(have_posts()): the_post();
 		?>
-		<div class="col-xs-offset-1 col-xs-10">
-			<h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
+		<div class="col-xs-12 col-sm-11">
+			<h1><?php the_title();?></h1>
 			<p><?php the_content(); ?></p>
 		</div>
-		<div class="col-xs-offset-1 col-xs-10"><hr/></div>
+		<div class="col-xs-11"><hr/></div>
 		<?php
 	endwhile;
 	?>
 	</div>
-	<div class="col-xs-offset-1 col-xs-10">
+	<div class="col-xs-12 col-sm-11">
 	<?php comments_template();?>
 	</div>
 </div>
