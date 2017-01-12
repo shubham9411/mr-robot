@@ -5,7 +5,8 @@
 		<meta name="viewport" content="initial-scale=1">
 		<!-- <title><?php the_title(); ?></title> -->
 		<?php do_action('wp_head'); ?>
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
