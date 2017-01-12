@@ -23,7 +23,7 @@
 	jQuery("#b-100").click(function () {
 		NProgress.done();
 	});
-	$('a').click(function(){
+	jQuery('a').click(function(){
 		NProgress.inc();
 		NProgress.start();
 		NProgress.set(0.4);

@@ -1,11 +1,10 @@
 <?php 
-
+include_once('widget.php');
 if ( ! function_exists( 'mr_robot_scripts' ) ) {
     function mr_robot_scripts() {
-        wp_enqueue_script('mr_robot-jquery', get_template_directory_uri().'/dist/lib/js/jquery-1.11.3.min.js');
-        wp_enqueue_script('mr_robot-nprogress', get_template_directory_uri().'/dist/lib/js/nprogress.js');
-        wp_enqueue_script('mr_robot-bootstrap', get_template_directory_uri().'/dist/lib/js/bootstrap.min.js');
-        wp_enqueue_script('main', get_template_directory_uri().'/main.js');
+        wp_enqueue_script('mr_robot-nprogress', get_template_directory_uri().'/dist/lib/js/nprogress.js',array('jquery'));
+        wp_enqueue_script('mr_robot-bootstrap', get_template_directory_uri().'/dist/lib/js/bootstrap.min.js',array('jquery'));
+        wp_enqueue_script('main', get_template_directory_uri().'/main.js',array('jquery'));
         wp_localize_script('main','ajaxurl',admin_url('admin-ajax.php') );
     }
     add_action('wp_enqueue_scripts','mr_robot_scripts');
