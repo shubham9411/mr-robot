@@ -10,8 +10,9 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="jumbotron">
+			<div class="jumbotron heading">
 			<center>
+				<?php $logo = the_custom_logo(); ?>
 				<h1><a href="<?php echo get_home_url(); ?>"><?php echo get_option('blogname' );?></a></h1>
 				<p>
 					<a href="<?php echo get_home_url(); ?>"><?php echo get_option('blogdescription' );?></a>

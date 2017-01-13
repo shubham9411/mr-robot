@@ -10,6 +10,9 @@
 	$('#submit-button').click(function(){
 		comment_form();
 	});
+	$('.custom-logo').addClass('img-circle');
+	$('.heading').css('background-image','url('+header_image+')');
+	$('.heading').css('background-color',custom_header_color);
 });
 })(jQuery);
 function comment_form(){

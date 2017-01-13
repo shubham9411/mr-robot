@@ -6,6 +6,10 @@ if ( ! function_exists( 'mr_robot_scripts' ) ) {
         wp_enqueue_script('mr_robot-bootstrap', get_template_directory_uri().'/dist/lib/js/bootstrap.min.js',array('jquery'));
         wp_enqueue_script('main', get_template_directory_uri().'/main.js',array('jquery'));
         wp_localize_script('main','ajaxurl',admin_url('admin-ajax.php') );
+        wp_localize_script('main','header_image' , get_header_image());
+        if(get_option('custom_header_color')){
+            wp_localize_script('main','custom_header_color' , get_option('custom_header_color'));
+        }
     }
     add_action('wp_enqueue_scripts','mr_robot_scripts');
 }
@@ -43,16 +47,16 @@ if(!function_exists('mr_robot_theme_setup')){
             'caption',
         ) );
         add_theme_support( 'custom-logo', array(
-            'width'       => 250,
-            'height'      => 250,
+            'width'       => 150,
+            'height'      => 150,
             'flex-width'  => true,
         ) );
         add_theme_support('custom-background');
         add_theme_support('title-tag' );
         $args = array(
             'default-image'          => get_stylesheet_directory_uri().'/dist/img/headshot.png',
-            // 'width'                  => 100,
-            // 'height'                 => 100,
+            'width'                  => 100,
+            'height'                 => 100,
             'flex-width'             => true,
             'flex-height'            => true,
             'header-text'            => false,
@@ -66,7 +70,8 @@ if(!function_exists('mr_robot_theme_setup')){
 
         add_theme_support( 'custom-header', $args );
         // add_theme_support( 'customize-selective-refresh-widgets' );
-        // add_theme_support( 'post-formats',  array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+        add_theme_support( 'post-formats',  array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+        add_option( 'custom_header_color', 'antiquewhite' );
     }
 }
 if(!function_exists('mr_robot_pingback_header')){
