@@ -56,7 +56,17 @@ a, button, input:focus, input[type="button"], input[type="reset"], input[type="s
     -o-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
 }
-
+.post-content{
+	a{
+		&:focus, 
+		&:visited,
+		&:hover,
+		&:active{
+			color: #008CBA;
+			text-decoration: underline;
+		}
+	}
+}
 .row{
 	width: 100%;
 }
@@ -85,5 +95,9 @@ a, button, input:focus, input[type="button"], input[type="reset"], input[type="s
 	background-size: cover;
 	padding-top: 24px;
 	padding-bottom: 24px;
+	color: #faebd7;
+	a:hover{
+		color: #faebd7;
+	}
 }
 @import 'media';

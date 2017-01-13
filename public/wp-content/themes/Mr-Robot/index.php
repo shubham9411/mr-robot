@@ -23,7 +23,9 @@ get_header();
 				endif;?>
 			</p>
 		</div>
-		<?php the_excerpt(); ?>
+		<div class="post-excerpt">
+			<?php the_excerpt(); ?>
+		</div>
 		<div class="post-meta">
 			<p>
 				<span><?php the_category(', ');?></span>

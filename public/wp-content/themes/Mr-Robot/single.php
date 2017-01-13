@@ -17,7 +17,9 @@ get_header(); ?>
 		?>
 		<div class="col-xs-12 col-sm-11">
 			<h1><?php the_title();?></h1>
-			<p><?php the_content(); ?></p>
+			<div class="post-content">
+				<p><?php the_content(); ?></p>
+			</div>
 		</div>
 		<div class="col-xs-11"><hr/></div>
 		<?php
