@@ -1,24 +1,33 @@
 <?php 
+$version = '1.0.0'; // used for returning version of style and js
 include_once('widget.php');
 if ( ! function_exists( 'mr_robot_scripts' ) ) {
     function mr_robot_scripts() {
-        wp_enqueue_script('mr_robot-nprogress', get_template_directory_uri().'/dist/lib/js/nprogress.js',array('jquery'));
+        $my_js_ver  = md5(date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . '/main.js' )));
+        $my_js_ver = mr_robot_return_version($my_js_ver);
+        wp_enqueue_script('mr_robot-nprogress', get_template_directory_uri().'/dist/lib/js/nprogress.min.js',array('jquery'));
         wp_enqueue_script('mr_robot-bootstrap', get_template_directory_uri().'/dist/lib/js/bootstrap.min.js',array('jquery'));
-        wp_enqueue_script('main', get_template_directory_uri().'/main.js',array('jquery'));
+        wp_enqueue_script('main', get_template_directory_uri().'/main.js',array('jquery'), $my_js_ver);
         wp_localize_script('main','ajaxurl',admin_url('admin-ajax.php') );
         wp_localize_script('main','header_image' , get_header_image());
         if(get_option('custom_header_color')){
             wp_localize_script('main','custom_header_color' , get_option('custom_header_color'));
         }
+        // wp_enqueue_script( 'jcrop' );
+        // wp_enqueue_script('jquery-masonry');
+        // wp_enqueue_script('jquery-form' );
+        // wp_enqueue_script('masonry' );
     }
     add_action('wp_enqueue_scripts','mr_robot_scripts');
 }
 
 if ( ! function_exists( 'mr_robot_styles' ) ) {
     function mr_robot_styles() {  
+        $my_css_ver = md5(date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )));
+        $my_css_ver = mr_robot_return_version($my_css_ver);
         wp_enqueue_style('mr_robot-bootstrap', get_template_directory_uri().'/dist/lib/css/bootstrap.min.css');
-        wp_enqueue_style('mr_robot-nprogress', get_template_directory_uri().'/dist/lib/css/nprogress.css');
-        wp_enqueue_style('style', get_template_directory_uri().'/style.css');
+        wp_enqueue_style('mr_robot-nprogress', get_template_directory_uri().'/dist/lib/css/nprogress.min.css');
+        wp_enqueue_style('style', get_stylesheet_uri(), false, $my_css_ver);
 
     }
     add_action('wp_enqueue_scripts','mr_robot_styles');
@@ -30,7 +39,8 @@ if(!function_exists('mr_robot_custom_excerpt_length')){
 }
 if(!function_exists('mr_robot_excerpt_more')){
     function mr_robot_excerpt_more(){
-        return '...';
+        global $post;
+        return '...<a href="' . get_the_permalink() . '" title="Read More" >Read More → </a>';
     }
 }
 if(!function_exists('mr_robot_theme_setup')){
@@ -102,41 +112,43 @@ if(!function_exists('mr_robot_widget_init')){
         
     }
 }
-if(!function_exists('mr_robot_meta_tags')){
-    function mr_robot_meta_tags(){
-        global $post;
-        echo '<!--- meta tags--->'."\n";
-        echo '<meta property="og:locale" content="en_US" />'."\n";
-        echo '<meta property="og:site_name" content="'.get_option('blogname' ).'" />'."\n";
-        echo '<meta name="twitter:site" content="'.get_option('blogname' ).'" />'."\n";
-        echo '<meta name="twitter:card" content="summary" />'."\n";
-        echo '<meta name="twitter:creator" content="@shubham9411" />'."\n";
-        if (is_home()) {
-            echo '<meta name="robots" content="index,archive,follow" />'."\n";
-            echo '<meta property="og:url" content="'.get_home_url().'" />'."\n";
-        } 
-        else if(is_single() || is_page()){
-            echo '<meta name="robots" content="index,archive,follow" />'."\n";
-            echo '<meta property="og:url" content="'.get_the_permalink().'" />'."\n";
-            $url =  mr_robot_meta_image();
-            echo '<meta property="og:image" content="'.$url.'" />'."\n";
-            echo '<meta property="og:description" content="'.get_the_excerpt($post->ID).'" />'."\n";
-            echo '<meta name="twitter:description" content="'.get_the_excerpt($post->ID).'" />'."\n";
-            echo '<meta property="og:title" content="'.get_the_title().'" />'."\n";
-            echo '<meta name="twitter:title" content="'.get_the_title().'" />'."\n";
-            if(is_single()){
-                echo '<meta property="og:type" content="post" />'."\n";
-            }
-            else{
-                echo '<meta property="og:type" content="page" />'."\n";
-            }
-        }
-        else {
-            echo '<meta name="robots" content="noindex,noarchive,follow" />'."\n";
-        }
-        echo '<!--- end meta tags--->'."\n";
-    }
-}
+// if(!function_exists('mr_robot_meta_tags')){
+//     function mr_robot_meta_tags(){
+//         global $post;
+//         setup_postdata($post);
+//         echo '<!--- meta tags--->'."\n";
+//         echo '<meta property="og:locale" content="en_US" />'."\n";
+//         echo '<meta property="og:site_name" content="'.get_option('blogname' ).'" />'."\n";
+//         echo '<meta name="twitter:site" content="'.get_option('blogname' ).'" />'."\n";
+//         echo '<meta name="twitter:card" content="summary" />'."\n";
+//         echo '<meta name="twitter:creator" content="@shubham9411" />'."\n";
+//         if (is_home()) {
+//             echo '<meta name="robots" content="index,archive,follow" />'."\n";
+//             echo '<meta property="og:url" content="'.get_home_url().'" />'."\n";
+//         } 
+//         else if(is_single() || is_page()){
+//             if(is_single()){
+//                 echo '<meta property="og:type" content="post" />'."\n";
+//             }
+//             else{
+//                 echo '<meta property="og:type" content="page" />'."\n";
+//             }
+//             echo '<meta name="robots" content="index,archive,follow" />'."\n";
+//             echo '<meta property="og:url" content="'.get_the_permalink().'" />'."\n";
+//             $url =  mr_robot_meta_image();
+//             echo '<meta property="og:image" content="'.$url.'" />'."\n";
+//             echo '<meta property="og:description" content="'.get_the_excerpt().'" />'."\n";
+//             echo '<meta name="twitter:description" content="'.get_the_excerpt().'" />'."\n";
+//             echo '<meta property="og:title" content="'.get_the_title().'" />'."\n";
+//             echo '<meta name="twitter:title" content="'.get_the_title().'" />'."\n";
+//         }
+//         else {
+//             echo '<meta name="robots" content="noindex,noarchive,follow" />'."\n";
+//         }
+//         echo '<!--- end meta tags--->'."\n";
+//         wp_reset_postdata();
+//     }
+// }
 if(!function_exists('mr_robot_meta_image')){
     function mr_robot_meta_image(){
         global $post, $posts;
@@ -159,11 +171,25 @@ if(!function_exists('mr_robot_meta_image')){
         return $meta_image;
     }
 }
+function mr_robot_return_version($var_hash){
+    global $version;
+    $version_val = $version . '.' . substr($var_hash,0,4);
+    return $version_val;
+}
+if(!function_exists('mr_robot_custom_field')){
+    function mr_robot_custom_field($attr){
+        global $post;
+        $name = $attr['name'];
+        if(empty($name)) return;
+        return get_post_meta( $post->ID, $name, true );
+    }
+}
 add_filter('show_admin_bar','__return_false');
 add_filter('excerpt_more','mr_robot_excerpt_more');
 add_filter('excerpt_length','mr_robot_custom_excerpt_length');
-add_action('after_setup_theme', 'mr_robot_theme_setup' );
-add_action('wp_head', 'mr_robot_pingback_header' );
-add_action('wp_head', 'mr_robot_meta_tags' );
-add_filter('the_generator', '__return_null' );
+add_action('after_setup_theme','mr_robot_theme_setup');
+add_action('wp_head','mr_robot_pingback_header');
+// add_action('wp_head','mr_robot_meta_tags');
+add_filter('the_generator', '__return_null');
 add_action('widgets_init','mr_robot_widget_init');
+add_shortcode('new_field','mr_robot_custom_field');

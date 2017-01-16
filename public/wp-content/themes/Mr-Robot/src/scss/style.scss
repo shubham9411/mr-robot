@@ -56,6 +56,9 @@ a, button, input:focus, input[type="button"], input[type="reset"], input[type="s
     -o-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
 }
+hr{
+	border-top: 2px solid rgba(255, 119, 0, 0.75);
+}
 .post-content{
 	a{
 		&:focus, 
@@ -98,6 +101,12 @@ a, button, input:focus, input[type="button"], input[type="reset"], input[type="s
 	color: #faebd7;
 	a:hover{
 		color: #faebd7;
+	}
+}
+.pagination-single{
+	font-weight: bold;
+	.next{
+		float: right;
 	}
 }
 @import 'media';

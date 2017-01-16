@@ -1,0 +1,7 @@
+/*
+Theme Name: Resolution
+ Theme URI: http://shubhampandey.in
+ Author: Shubham Pandey
+ Description: Theme developed by Shubham Pandey
+ Version: 1.0.0*/
+body,p{font-family:Lato,sans-serif}body{font-size:16px;color:#000}a,a:focus,a:visited{color:inherit;text-decoration:none}a:active,a:hover{color:#008CBA;text-decoration:none}li{list-style:none;padding:0}h1,h2,h3,h4,h5,h6{font-family:Alegreya,serif}::selection{background:#e43;color:#fff}a,button,input:focus,input[type=button],input[type=reset],input[type=submit],textarea:focus{-webkit-transition:all .1s ease-in-out;-moz-transition:all .1s ease-in-out;-ms-transition:all .1s ease-in-out;-o-transition:all .1s ease-in-out;transition:all .1s ease-in-out}hr{border-top:2px solid rgba(255,119,0,.75)}.post-content a:active,.post-content a:focus,.post-content a:hover,.post-content a:visited{color:#008CBA;text-decoration:underline}.heading,.heading a:hover{color:#faebd7}.row{width:100%}.content{padding-top:2em}.logo{padding:0}.post-meta{font-size:.9em}.post-meta span:last-child:after,.post-meta span:only-child:after{content:'';padding:0}.post-meta span:after{content:'\00a0\/\00a0';padding:5px}.heading{background-size:cover;padding-top:24px;padding-bottom:24px}.pagination-single{font-weight:700}.pagination-single .next{float:right}

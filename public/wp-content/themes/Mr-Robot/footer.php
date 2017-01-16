@@ -1,5 +1,5 @@
 	</div>
-	<div class="col-xs-3">
+	<div class="col-xs-offset-1 col-xs-11 col-sm-offset-0 col-sm-3">
 		<?php get_sidebar(); ?>
 	</div>
 </div>

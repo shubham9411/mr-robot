@@ -8,10 +8,11 @@ get_header();
 	if(is_page()):the_post();
 		get_template_part('templates/page','content' );
 	endif;
+	if (have_posts()):
 	while(have_posts()): the_post();
 	?>
 	<div class="col-xs-12 col-sm-11">
-		<h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
+		<h1><a href="<?php the_permalink(); ?>" title="Permalink to - <?php the_title(); ?>"><?php the_title();?></a></h1>
 		<div class="post-meta">
 			<p>
 				<span><?php the_time('F j, Y'); ?></span>
@@ -46,6 +47,10 @@ get_header();
 	<div class="col-xs-12 col-sm-11"><hr/></div>
 	<?php
 	endwhile;
+	else:?>
+		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+	<?php
+	endif;
 	?>
 </div>
 <?php
