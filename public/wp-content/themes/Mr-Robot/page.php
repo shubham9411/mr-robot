@@ -5,8 +5,8 @@
 * @package Mr Robot
 */
 get_header(); ?>
-<div class="row wrap">
-	<div class="col-xs-12">
+<div class="row wrap zero-margin">
+	<div class="col-xs-12 zero-padding">
 		<?php
 		$max_count = wp_count_posts()->publish;
 		$count= 0;
@@ -21,14 +21,11 @@ get_header(); ?>
 		<div class="col-xs-11"><hr/></div>
 		<?php
 		endwhile;
-		if (will_paginate()):
 		?>
 		<ul id="pagination">
 			<li class="previous"><?php posts_nav_link('','','&laquo; Previous Entries') ?></li>
 			<li class="future"><?php posts_nav_link('','Next Entries &raquo;','') ?></li>
 		</ul>
-		
-		<?php endif; ?>
 	</div>
 	<div class="col-xs-12 col-sm-11">
 		<?php comments_template();?>

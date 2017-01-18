@@ -15,15 +15,22 @@
 /*--------------------------------------------------tablet-------------------------------------------------*/
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
-    
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
 
 @media only screen and (max-width: 767px) and (min-width: 480px) {
-    
+	.widget-wrap{
+		margin-top: 2em;
+	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
 
 @media only screen and (max-width: 479px) {
-    
+	.widget-wrap{
+    	margin-top: 2em;
+    }
+    .custom-logo{
+    	width: 6em;
+    	height: 6em;
+    }
 }

@@ -1,6 +1,6 @@
 <?php 
 $version = '1.0.0'; // used for returning version of style and js
-include_once('widget.php');
+include_once('adv_custom_field.php');
 if ( ! function_exists( 'mr_robot_scripts' ) ) {
     function mr_robot_scripts() {
         $my_js_ver  = md5(date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . '/main.js' )));
@@ -82,6 +82,14 @@ if(!function_exists('mr_robot_theme_setup')){
         // add_theme_support( 'customize-selective-refresh-widgets' );
         add_theme_support( 'post-formats',  array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
         add_option( 'custom_header_color', 'antiquewhite' );
+        // $saved_page_args = array(
+        //     'post_title'   => 'Settings',
+        //     'post_content' => '[toptal-saved]',
+        //     'post_status'  => 'publish',
+        //     'post_type'    => 'page'
+        // );
+        // $saved_page_id = wp_insert_post( $saved_page_args );
+        // add_option( 'mr_robot_page_save_id', $saved_page_id );
     }
 }
 if(!function_exists('mr_robot_pingback_header')){
@@ -102,8 +110,8 @@ if(!function_exists('mr_robot_widget_init')){
                 'id'            => 'primary-sidebar',
                 'description'   => 'Primary sidebar to show notification and alert in the website',
                 'class'         => 'primary-sidebar',
-                'before_widget' => '<li id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</li>',
+                'before_widget' => '<div id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</div>',
                 'before_title'  => '<h2 class="widget-title">',
                 'after_title'   => '</h2>'
             );
@@ -193,3 +201,15 @@ add_action('wp_head','mr_robot_pingback_header');
 add_filter('the_generator', '__return_null');
 add_action('widgets_init','mr_robot_widget_init');
 add_shortcode('new_field','mr_robot_custom_field');
+add_shortcode('coming_soon','mr_robot_coming_soon');
+function will_paginate() 
+{
+    global $wp_query;
+    if ( is_home() ) {
+        $max_num_pages = $wp_query->max_num_pages;
+        if ( $max_num_pages > 1 ){
+            return true;
+        }
+    }
+    return false;
+}
