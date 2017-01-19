@@ -72,5 +72,6 @@ function nprogress(){
 		NProgress.inc();
 		NProgress.start();
 		NProgress.set(0.4);
+		setTimeout(function() {NProgress.done()}, 3000);
 	});
 }

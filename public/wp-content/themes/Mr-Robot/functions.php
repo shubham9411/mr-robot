@@ -28,6 +28,7 @@ if ( ! function_exists( 'mr_robot_styles' ) ) {
         $my_css_ver = md5(date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )));
         $my_css_ver = mr_robot_return_version($my_css_ver);
         wp_enqueue_style('mr_robot-bootstrap', get_template_directory_uri().'/dist/lib/css/bootstrap.min.css');
+        wp_enqueue_style('mr_robot-font-awesome', get_template_directory_uri().'/dist/lib/css/font-awesome.min.css');
         wp_enqueue_style('mr_robot-nprogress', get_template_directory_uri().'/dist/lib/css/nprogress.min.css');
         wp_enqueue_style('style', get_stylesheet_uri(), false, $my_css_ver);
 

@@ -22,10 +22,6 @@ get_header(); ?>
 		<?php
 		endwhile;
 		?>
-		<ul id="pagination">
-			<li class="previous"><?php posts_nav_link('','','&laquo; Previous Entries') ?></li>
-			<li class="future"><?php posts_nav_link('','Next Entries &raquo;','') ?></li>
-		</ul>
 	</div>
 	<div class="col-xs-12 col-sm-11">
 		<?php comments_template();?>
