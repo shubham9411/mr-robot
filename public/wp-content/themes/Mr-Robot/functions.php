@@ -1,5 +1,7 @@
 <?php 
 $version = '1.0.0'; // used for returning version of style and js
+define( 'ACF_LITE', true );
+include_once('advanced-custom-fields/acf.php');
 include_once('adv_custom_field.php');
 if ( ! function_exists( 'mr_robot_scripts' ) ) {
     function mr_robot_scripts() {

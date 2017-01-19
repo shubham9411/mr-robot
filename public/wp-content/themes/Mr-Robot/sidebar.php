@@ -1,4 +1,4 @@
-<div class="sidebar row">
+<div class="sidebar row zero-margin">
 	<div class="widget-wrap">
 <!-- 		<div class="widget">
 			<form class="form-inline" role="form" method="get" action="<?php echo get_home_url(); ?>">
