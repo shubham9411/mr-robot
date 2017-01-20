@@ -60,6 +60,33 @@
 			endif;
 		endforeach;
 		?>
+		<?php 
+		if(is_single() && function_exists('get_field')):
+		?>
+		<div class="widget related-posts">
+			<h1>Related Posts!</h1>
+			<?php $posts = get_field('related_posts'); 
+			if(!empty($posts)):
+			?>
+			<div class="posts">
+				<?php 
+				foreach ($posts as $key => $post) {
+					setup_postdata($post);
+					echo '<p><a href="'.get_permalink($post).'">'.get_the_title($post).'</a></p>';
+					wp_reset_postdata();
+				}
+				?>
+			</div>
+			<?php
+			else: ?>
+			<div class="not-found">
+				<h3>No Related Posts!</h3>
+			</div>
+			<?php endif; ?>
+		</div>
+		<?php 
+		endif;
+		?>
 		<?php
 		if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar( 'primary-sidebar' ) ) :
 		endif;

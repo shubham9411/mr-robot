@@ -1,4 +1,5 @@
 <?php
+/*=== for Upcoming Posts ===*/
 $id = get_page_by_title('Settings')->ID;
 if(function_exists("register_field_group"))
 {
@@ -57,6 +58,55 @@ if(function_exists("register_field_group"))
 				11 => 'categories',
 				12 => 'tags',
 				13 => 'send-trackbacks',
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+/*=== for Related Posts ===*/
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_related-posts',
+		'title' => 'Related Posts',
+		'fields' => array (
+			array (
+				'key' => 'field_5881c44bddd89',
+				'label' => 'Related Posts',
+				'name' => 'related_posts',
+				'type' => 'relationship',
+				'return_format' => 'id',
+				'post_type' => array (
+					0 => 'post',
+				),
+				'taxonomy' => array (
+					0 => 'all',
+				),
+				'filters' => array (
+					0 => 'search',
+				),
+				'result_elements' => array (
+					0 => 'post_type',
+					1 => 'post_title',
+				),
+				'max' => 4,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
 			),
 		),
 		'menu_order' => 0,
