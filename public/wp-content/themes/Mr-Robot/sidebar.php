@@ -27,10 +27,6 @@
 					<span class="sr-only">Linkedin Link</span>
 					<i class="fa fa-btn fa-lg fa-linkedin"></i>
 				</a>
-				<a href="http://plus.google.com/+shubham9411" target="_blank">
-					<span class="sr-only">Google Plus Link</span>
-					<i class="fa fa-btn fa-lg fa-google-plus"></i>
-				</a>
 				<a href="https://twitter.com/shubham9411" target="_blank">
 					<span class="sr-only">Twitter Link</span>
 					<i class="fa fa-btn fa-lg fa-twitter"></i>
@@ -39,6 +35,9 @@
 					<span class="sr-only">Mail to link</span>
 					<i class="fa fa-btn fa-lg fa-envelope"></i>
 				</a>
+			</div>
+			<div class="social-icons follow-wp">
+				<a class="wordpress-follow-button fa fa-wordpress" href="http://shubhampandey.in" data-blog="http://shubhampandey.in" data-lang="en" data-show-blog-name="false">Follow Shubham Pandey on WordPress.com</a>
 			</div>
 		</div>
 		<?php
