@@ -26,7 +26,7 @@ if(function_exists("register_field_group"))
 					0 => 'post_type',
 					1 => 'post_title',
 				),
-				'max' => 2,
+				'max' => 4,
 			),
 		),
 		'location' => array (

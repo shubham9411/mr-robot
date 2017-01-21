@@ -18,6 +18,8 @@
 	})
 	$('figure').addClass('img-responsive');
 	nprogress();
+	// Wordpress follow button
+	(function(d){var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');p.type = 'text/javascript';p.async = true;p.src = '//widgets.wp.com/platform.js';f.parentNode.insertBefore(p,f);}(document));
 });
 })(jQuery);
 function comment_form(){

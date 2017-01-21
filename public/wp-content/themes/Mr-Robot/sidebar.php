@@ -37,7 +37,7 @@
 				</a>
 			</div>
 			<div class="social-icons follow-wp">
-				<a class="wordpress-follow-button fa fa-wordpress" href="http://shubhampandey.in" data-blog="http://shubhampandey.in" data-lang="en" data-show-blog-name="false">Follow Shubham Pandey on WordPress.com</a>
+				<a class="wordpress-follow-button" href="http://shubhampandey.in" data-blog="http://shubhampandey.in" data-lang="en" data-show-blog-name="false">Follow Shubham Pandey on WordPress.com</a>
 			</div>
 		</div>
 		<?php
@@ -51,7 +51,9 @@
 			<h1>Upcoming Articles!</h1>
 			<div class="posts">
 				<?php foreach($ids as $id): ?>
+				<?php if(get_post($id)->post_status == 'draft'):?>
 				<p><?php echo get_the_title($id); ?></p>
+				<?php endif;?>
 				<?php endforeach;?>
 			</div>
 			<br/>
