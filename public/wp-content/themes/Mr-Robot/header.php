@@ -12,7 +12,7 @@
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
         <![end if]-->
 	</head>
-	<body>
+	<body <?php body_class(); ?>>
 		<header class="container">
 			<div class="jumbotron heading">
 			<center>

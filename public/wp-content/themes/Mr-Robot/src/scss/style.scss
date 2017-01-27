@@ -13,7 +13,7 @@ body {
 	font-size: 16px;
 	font-family: 'Lato', sans-serif;
 	color: $black;
-	background-color: #f9f5f5;
+	background-color: $background;
 }
 a{
 	color: inherit;
@@ -61,13 +61,13 @@ input:focus,
 input[type="button"], 
 input[type="reset"], 
 input[type="submit"], 
-textarea:focus, 
+textarea:focus,
 img {
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 hr{
 	border-top: 2px solid rgba(255, 119, 0, 0.75);
@@ -97,6 +97,7 @@ figcaption{
 	padding-top: 2em;
 	padding-bottom: 2em;
 	background-color: white;
+	border-radius: 0 0 10px 10px;
 }
 .logo{
 	padding: 0;
@@ -143,18 +144,13 @@ figcaption{
 }
 .coming-soon{
 	text-align: center;
-	background: -webkit-radial-gradient(white,#f9f5f5);
-	background: -o-radial-gradient(white,#f9f5f5);
-	background: -moz-radial-gradient(white,#f9f5f5);
-	background: radial-gradient(white,#f9f5f5);
-	padding: 1em;
 }
 .widget{
-	background: -webkit-radial-gradient(white,#f9f5f5);
-	background: -o-radial-gradient(white,#f9f5f5);
-	background: -moz-radial-gradient(white,#f9f5f5);
-	background: radial-gradient(white,#f9f5f5);
-	padding: 1em;
+	background: -webkit-radial-gradient(white,$background);
+	background: -o-radial-gradient(white,$background);
+	background: -moz-radial-gradient(white,$background);
+	background: radial-gradient(white,$background);
+	padding: 2em;
 	table a{
 		color: #008CBA;
 	}
