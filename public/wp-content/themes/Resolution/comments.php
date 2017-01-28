@@ -3,7 +3,7 @@
 		<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 		<?php
-			printf( _n( 'One thought on &ldquo;%1$s&rdquo;', 'Thoughts on &ldquo;%1$s&rdquo;', 'comments title', 'ColoredCow' ),
+			printf( _n( 'One thought on &ldquo;%1$s&rdquo;', 'Thoughts on &ldquo;%1$s&rdquo;', 'Resolution' ),
 				get_the_title() );
 		?>
 		</h2>
@@ -12,10 +12,10 @@
 			<h2 class=""><?php echo 'Comment navigation'; ?></h2>
 			<div class="nav-links">
 				<?php
-					if ( $prev_link = get_previous_comments_link( __( 'Older Comments', 'ColoredCow' ) ) ) :
+					if ( $prev_link = get_previous_comments_link( __( 'Older Comments', 'Resolution' ) ) ) :
 						printf( '<div class="nav-previous">%s</div>', $prev_link );
 					endif;
-					if ( $next_link = get_next_comments_link( __( 'Newer Comments', 'ColoredCow' ) ) ) :
+					if ( $next_link = get_next_comments_link( __( 'Newer Comments', 'Resolution' ) ) ) :
 						printf( '<div class="nav-next">%s</div>', $next_link );
 					endif;
 				?>

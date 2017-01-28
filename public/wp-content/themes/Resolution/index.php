@@ -14,10 +14,10 @@ get_header();
 		<div class="post-meta">
 			<p>
 				<span><?php the_time('F j, Y'); ?></span>
-				<span><?php comments_popup_link(__('Leave a Reply'), __('1 comment'), __(' % Comments'));?></span>
+				<span><?php comments_popup_link(__('Leave a Reply','Resolution'), __('1 comment','Resolution'), __(' % Comments','Resolution'));?></span>
 				<?php
 				if(current_user_can('manage_options')):?>
-				<span><?php edit_post_link(__('Edit')); ?></span>
+				<span><?php edit_post_link(__('Edit','Resolution')); ?></span>
 				<?php
 				endif;?>
 			</p>
@@ -35,7 +35,6 @@ get_header();
 		<div class="post-meta">
 			<p>
 				<span><?php the_category(', ');?></span>
-				<!-- <span><?php comments_popup_link(__('Leave a Reply'), __('1 comment'), __(' % Comments'));?></span> -->
 				<?php
 				if(get_the_tags()):?>
 				<span><?php the_tags( 'Tag: ', ', ' ); ?></span>
@@ -43,7 +42,7 @@ get_header();
 				endif;?>
 				<?php
 				if(current_user_can('manage_options')):?>
-				<span><?php edit_post_link(__('Edit')); ?></span>
+				<span><?php edit_post_link(__('Edit','Resolution')); ?></span>
 				<?php
 				endif;?>
 			</p>
@@ -53,8 +52,8 @@ get_header();
 	<?php
 	endwhile;
 	else:?>
-		<h1><?php _e('Sorry!'); ?></h1>
-		<p><?php _e('No posts matched.'); ?></p>
+		<h1><?php _e('Sorry!','Resolution'); ?></h1>
+		<p><?php _e('No posts matched.','Resolution'); ?></p>
 	<?php
 	endif;?>
 	<?php if (will_paginate()): ?>

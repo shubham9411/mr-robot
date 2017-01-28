@@ -48,7 +48,7 @@ module.exports = function (grunt) {
       taskName: {
         options: {
           position: 'top',
-          banner: '/*\nTheme Name: Resolution\n Theme URI: http://shubhampandey.in\n Author: Shubham Pandey\n Description: Theme developed by Shubham Pandey\n Version: 1.0.0*/',
+          banner: '/*\nTheme Name: Resolution\n Theme URI: http://shubhampandey.in\n Author: Shubham Pandey\n Description: Theme developed by Shubham Pandey\n Version: 1.0.0\nText Domain: Resolution\nLicense URI: http://www.gnu.org/licenses/gpl-2.0.html\nLicense: GNU General Public License v2 or later\n*/',
           linebreak: true
         },
         files: {

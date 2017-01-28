@@ -9,9 +9,9 @@ public/wp-config.php
 public/wp-content/uploads
 
 #gitignore for theme folder
-!/public/wp-content/themes/Mr-Robot
-/public/wp-content/themes/Mr-Robot/node_modules
-/public/wp-content/themes/Mr-Robot/dist/css
-/public/wp-content/themes/Mr-Robot/dist/js
-/public/wp-content/themes/Mr-Robot/*.map
-/public/wp-content/themes/Mr-Robot/.sass-cache
+!/public/wp-content/themes/Resolution
+/public/wp-content/themes/Resolution/node_modules
+/public/wp-content/themes/Resolution/dist/css
+/public/wp-content/themes/Resolution/dist/js
+/public/wp-content/themes/Resolution/*.map
+/public/wp-content/themes/Resolution/.sass-cache

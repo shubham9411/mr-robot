@@ -1,14 +1,5 @@
 <div class="sidebar row zero-margin">
 	<div class="widget-wrap">
-		<!-- <div class="widget">
-			<form class="form-inline" role="form" method="get" action="<?php echo get_home_url(); ?>">
-				<div class="form-group">
-					<label for="search" class="sr-only">Search</label>
-					<input type="text" id="search" name="s" class="form-control">
-				</div>
-				<button type="submit" class="btn btn-default"><?php _e('Search'); ?></button>
-			</form>
-		</div> -->
 		<div class="widget about-me">
 			<div class="social-icons">
 				<a href="<?php echo get_home_url().'/feed';?>" target="_blank" >

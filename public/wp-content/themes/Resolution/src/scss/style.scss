@@ -4,6 +4,10 @@ Author: Shubham
 Author URI: http://shubhampandey.in
 Description: Theme developed by Shubham Pandey
 Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: Resolution
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 */
 
 @import 'variables';
@@ -172,5 +176,14 @@ figcaption{
 	.not-found{
 		padding-left: 20px;
 	}
+}
+.aligncenter{
+	text-align: center;
+}
+.alignleft {
+	text-align: left;
+}
+.alignright {
+	text-align: right;
 }
 @import 'media';

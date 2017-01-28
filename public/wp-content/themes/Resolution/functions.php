@@ -1,8 +1,9 @@
 <?php 
 $version = '1.0.0'; // used for returning version of style and js
-define( 'ACF_LITE', true );
-include_once('advanced-custom-fields/acf.php');
-include_once('adv_custom_field.php');
+// define( 'ACF_LITE', true );
+// include_once('advanced-custom-fields/acf.php');
+// include_once('adv_custom_field.php');
+if ( ! isset( $content_width ) ) $content_width = 900;
 if ( ! function_exists( 'mr_robot_scripts' ) ) {
     function mr_robot_scripts() {
         $my_js_ver  = md5(date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . '/main.js' )));
@@ -97,7 +98,7 @@ if(!function_exists('mr_robot_widget_init')){
             * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
             */
             $primary = array(
-                'name'          => __( 'Primary Sidebar', 'mr_robot' ),
+                'name'          => __( 'Primary Sidebar', 'Resolution' ),
                 'id'            => 'primary-sidebar',
                 'description'   => 'Primary sidebar to show notification and alert in the website',
                 'class'         => 'primary-sidebar',
